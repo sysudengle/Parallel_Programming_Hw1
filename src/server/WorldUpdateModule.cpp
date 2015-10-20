@@ -159,6 +159,7 @@ void WorldUpdateModule::run()
 			if( rand() % 100 < 10 )		sd->wm.regenerateObjects();
 
 			sd->send_start_quest = 0; sd->send_end_quest = 0;        	
+			#ifndef NO_QUESTS
 			if( start_time > start_quest )
 			{
 				start_quest = end_quest + sd->quest_between;
@@ -174,6 +175,7 @@ void WorldUpdateModule::run()
 				sd->send_end_quest = 1;
 				if( sd->display_quests )		printf("Quest over\n");				
 			}
+			#endif
 		}
 
 		SDL_WaitBarrier(barrier);

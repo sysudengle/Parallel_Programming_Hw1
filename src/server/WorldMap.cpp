@@ -34,6 +34,7 @@ void WorldMap::generate()
 	}
 
 	/* generate objects */
+	#ifndef NO_QUESTS
 	GameObject *o;
 	Region* r;
 			
@@ -48,6 +49,7 @@ void WorldMap::generate()
 			if( Region_addObject( r, o, min_res, max_res ) )	break;
 		}
 	}
+	#endif
 }
 
 Player* WorldMap::addPlayer( IPaddress a )

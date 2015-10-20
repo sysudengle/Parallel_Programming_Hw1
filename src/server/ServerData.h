@@ -24,6 +24,7 @@
 
 #include "WorldMap.h"
 
+#define NO_QUESTS
 
 struct ServerData
 {
